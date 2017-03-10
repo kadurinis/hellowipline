@@ -23,7 +23,9 @@ class m170309_165049_create_device_table extends Migration
                 [2, 'RB 921UAG'],
                 [3, 'RB 433'],
                 [4, 'RB 411AH'],
-                [5, 'RB 711AH']
+                [5, 'RB 711AH'],
+                [6, 'SuperBoard']
+
             ]
             );
     }
