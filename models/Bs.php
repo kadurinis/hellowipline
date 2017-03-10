@@ -53,12 +53,4 @@ class Bs extends \yii\db\ActiveRecord
     public function getantennaname() {
         return $this->hasOne(Antenna::className(), ['id' => 'ant_id']);
     }
-
-    public function getDeviceById() {
-        return Device::find()->where(['id'=>$this->id])->one()->dev;
-    }
-
-    public function getAntennaById() {
-        return Antenna::find()->where(['id'=>$this->id])->one()->name;
-    }
 }

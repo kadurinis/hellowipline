@@ -1,7 +1,8 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
+use kartik\grid\GridView;
+use yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\BsSearch */
@@ -22,23 +23,28 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        'pjax' => true,
+        'export' => false,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
             'name',
             [
-                'attribute'=>'dev_id',
-                'value'=>'devicename.dev',
-                'filter'=>$deviceList
+                'attribute' => 'dev_id',
+                'value' => function ($model) use ($deviceList) {
+                    return ArrayHelper::getValue($deviceList, $model->dev_id);
+                },
+                'filter' => $deviceList
             ],
             [
-                'attribute'=>'ant_id', // соответствие
-                'value'=>'antennaname.name', // вместо ant_id использовать имя (name), которое можно получить функцией getantennaname
-                'filter'=>$antennaList // задаем фильтр списком всех антенн (получено из контроллера)
+                'attribute' => 'ant_id', // соответствие
+                // вместо ant_id использовать имя (name), которое можно получить функцией getantennaname
+                'value' => function ($model) use ($antennaList) {
+                    return ArrayHelper::getValue($antennaList, $model->ant_id);
+                },
+                'filter' => $antennaList // задаем фильтр списком всех антенн (получено из контроллера)
             ],
 
             ['class' => 'yii\grid\ActionColumn',
-            'template'=>'{view} {update} {delete}']
+                'template' => '{view} {update} {delete}']
         ],
     ]); ?>
 </div>

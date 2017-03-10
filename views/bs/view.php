@@ -37,12 +37,12 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute'=>'dev_id',
                 'label'=>'Оборудование',
-                'value'=>$model->getDeviceById()
+                'value'=>$model->devicename->dev
             ],
             [
                 'attribute'=>'ant_id',
                 'label'=>'Антенна',
-                'value'=>$model->getAntennaById()
+                'value'=>$model->antennaname->name
             ]
         ],
     ]) ?>
