@@ -41,8 +41,8 @@ class Bs extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Название',
-            'dev_id' => 'Dev ID',
-            'ant_id' => 'Ant ID',
+            'dev_id' => 'Устройство',
+            'ant_id' => 'Антенна',
         ];
     }
 
