@@ -8,7 +8,7 @@ use yii\grid\GridView;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 /* @var $deviceList array pk=>value (array of all devices) */
 
-$this->title = 'Bs';
+$this->title = 'Тестовое задание';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="bs-index">
