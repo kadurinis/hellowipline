@@ -37,17 +37,27 @@ $config = [
                 ],
             ],
         ],
-        'db' => require(__DIR__ . '/db.php') ,
-/*
-        'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            [
+        'db' => require(__DIR__ . '/db.php'),
+        /*
+                'urlManager' => [
+                    'enablePrettyUrl' => true,
+                    'showScriptName' => false,
+                    [
 
-            ],
-        ],
-*/
+                    ],
+                ],
+        */
 
+    ],
+    'modules' => [
+        'gridview' => [
+            'class' => '\kartik\grid\Module'
+            // enter optional module parameters below - only if you need to
+            // use your own export download action or custom translation
+            // message source
+            // 'downloadAction' => 'gridview/export/download',
+            // 'i18n' => []
+        ]
     ],
     'params' => $params,
 ];
